@@ -93,3 +93,16 @@ SELECT
 FROM order_level
 GROUP BY sales_channel, discounted
 ORDER BY avg_items_per_order DESC;
+
+-- Discount vs No discount
+SELECT 
+    CASE 
+        WHEN discount_total > 0 THEN 'Discount'
+        ELSE 'No Discount'
+    END AS discount_status,
+    COUNT(DISTINCT order_id) AS orders,
+    ROUND(SUM(total_amount), 2) AS revenue,
+    ROUND(SUM(total_amount) / COUNT(DISTINCT order_id), 2) AS AOV
+FROM orders
+GROUP BY discount_status
+ORDER BY AOV DESC;
