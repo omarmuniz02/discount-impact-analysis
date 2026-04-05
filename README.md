@@ -1,5 +1,5 @@
 # 📊 Discount Impact on Customer Behavior
-
+![Discount Impact Dashboard](discount_impact.png)
 ## 📌 Overview
 
 This project analyzes how discount strategies influence customer purchasing behavior across three primary sales channels:
